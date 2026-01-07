@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALOHAS Chicago | Yasin Abuelgasim</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-btn" href="index.html#home">Home</a>
+        <a class="nav-btn" href="index.html#work">Work</a>
+        <a class="nav-btn" href="index.html#about">About</a>
+        <a class="nav-btn" href="index.html#contact">Contact</a>
+      </nav>
+
+      <main id="main">
+        <h1>ALOHAS Chicago</h1>
+        <p class="subtitle">Brand Launch Social Media Campaign</p>
+
+        <div class="divider">---o=O=o---</div>
+
+        <p class="project-meta">Role: Creative Director · Tools: Adobe Photoshop, Illustrator · Date: December, 2025</p>
+
+        <div class="project-block">
+          <h2>Overview</h2>
+          <p>
+            This project is a social-first launch campaign exploring a theoretical new Alohas store opening in Chicago.
+          </p>
+        </div>
+
+        <div class="project-block">
+          <h2>Campaign Phases</h2>
+
+          <section class="phase">
+            <h3 class="phase-title">Phase 1: Tease / Announcement</h3>
+            <p class="phase-note">
+              Early posts to tease new store location and establish the visual system.
+            </p>
+
+            <div class="media-grid">
+  <a class="media-item ar-1x217" href="#">
+    <div class="media-thumb">
+      <img src="images/alohas/P1 STORY1@2x.png" alt="ALOHAS Phase 1 graphic 1" />
+    </div>
+    <div class="media-caption">Phase 1 - Story 1</div>
+  </a>
+
+  <a class="media-item ar-1x217" href="#">
+    <div class="media-thumb">
+      <img src="images/alohas/P1 STORY2@2x.png" alt="ALOHAS Phase 1 graphic 2" />
+    </div>
+    <div class="media-caption">Phase 1 - Story 2</div>
+  </a>
+
+  <a class="media-item ar-1x217" href="#">
+    <div class="media-thumb">
+      <img src="images/alohas/P1 STORY3@2x.png" alt="ALOHAS Phase 1 graphic 3" />
+    </div>
+    <div class="media-caption">Phase 1 - Story 3</div>
+  </a>
+
+  <a class="media-item ar-1x217" href="#">
+    <div class="media-thumb">
+      <img src="images/alohas/P1 STORY4@2x.png" alt="ALOHAS Phase 1 graphic 4" />
+    </div>
+    <div class="media-caption">Phase 1 - Story 4</div>
+  </a>
+
+  <a class="media-item ar-1x217" href="#">
+    <div class="media-thumb">
+      <img src="images/alohas/P1 STORY5@2x.png" alt="ALOHAS Phase 1 graphic 5" />
+    </div>
+    <div class="media-caption">Phase 1 - Story 5</div>
+  </a>
+</div>
+
+
+            </div>
+          </section>
+
+          <section class="phase">
+            <h3 class="phase-title">Phase 2: Product / Features</h3>
+            <p class="phase-note">
+              Posts focused on details and featured products.
+            </p>
+
+            <div class="media-grid">
+  <a class="media-item ar-9x16" href="#">
+    <div class="media-thumb">
+      <img src="images/alohas/P3 POST1@2x.png" alt="ALOHAS Phase 2 graphic 1" />
+    </div>
+    <div class="media-caption">Phase 2 - Post 1</div>
+  </a>
+
+  <a class="media-item ar-9x16" href="#">
+    <div class="media-thumb">
+      <img src="images/alohas/P3 POST2@2x.png" alt="ALOHAS Phase 2 graphic 2" />
+    </div>
+    <div class="media-caption">Phase 2 - Post 2</div>
+  </a>
+</div>
+
+
+        <p>
+          <a class="nav-btn" href="index.html#work">Back to Work</a>
+        </p>
+      </main>
+
+      <footer>
+        <small>© <span id="year"></span> Yasin Abuelgasim</small>
+      </footer>
+    </div>
+
+    <!-- Modal (already styled in style.css) -->
+    <div class="modal" id="img-modal" aria-hidden="true">
+      <button class="btn modal-close" type="button" id="modal-close">Close</button>
+      <div class="modal-content">
+        <img id="modal-img" alt="Expanded project image" />
+      </div>
+    </div>
+
+    <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const modal = document.getElementById("img-modal");
+  const modalImg = document.getElementById("modal-img");
+  const modalClose = document.getElementById("modal-close");
+
+  function openModal(src, alt) {
+    modalImg.src = src;
+    modalImg.alt = alt || "Expanded project image";
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    modalImg.src = "";
+    document.body.style.overflow = "";
+  }
+
+  // Click-to-zoom for any gallery image
+  document.addEventListener("click", (e) => {
+    const img = e.target.closest(".media-thumb img");
+    if (!img) return;
+
+    // prevent the <a href="#"> from jumping you to the top
+    e.preventDefault();
+
+    openModal(img.src, img.alt);
+  });
+
+  modalClose.addEventListener("click", closeModal);
+
+  // Click outside image to close
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Escape to close
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  });
+</script>
+
+    </script>
+    <div class="modal" id="img-modal" aria-hidden="true">
+  <button class="btn modal-close" type="button" id="modal-close">Close</button>
+  <div class="modal-content">
+    <img id="modal-img" alt="Expanded project image" />
+  </div>
+</div>
+
+  </body>
+</html>
